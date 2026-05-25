@@ -15,7 +15,7 @@
 1.  [領域カラーキー](領域カラーキー)
 1.  [領域ルミナンスキー](領域ルミナンスキー)
 
-TODO: images.
+![各種スクリプトのデモ](https://github.com/user-attachments/assets/8cc6f500-1a41-40bb-af48-5b3ff1502d3e)
 
 ##  お願い
 
@@ -62,7 +62,7 @@ Although, usage documentations for this script / plugin in languages other than 
 
 塗りつぶし以外にも，指定した範囲に対して任意のフィルタ効果をかけることができます．
 
-TODO: images.
+![連結成分塗りつぶしのデモ](https://github.com/user-attachments/assets/3131af17-8488-4c9e-ad1a-6469121c1279)
 
 - 逆に指定範囲の外側のピクセルを塗りつぶすこともできます．
 
@@ -83,7 +83,7 @@ TODO: images.
 
 - 各個別オブジェクトは，回転中心が元オブジェクト同じ位置を共有しています．個別オブジェクトの中央に回転中心を設定したい場合は，[Basic_S の「上下左右揃え」](https://github.com/sigma-axis/aviutl2_script_Basic_S/wiki/上下左右揃え)で「描画位置を固定」を ON にしてかけるなどが有効です．
 
-TODO: images.
+![連結成分個別オブジェクト化の操作デモ](https://github.com/user-attachments/assets/a1822ee9-697c-4bbe-9580-0de83bbaaa6f)
 
 [\[共通の設定項目 :arrow_right:\]](#共通の設定項目) [\[固有の設定項目 :arrow_right:\]](#連結成分個別オブジェクト化のパラメタ) 
 [\[`PI` :arrow_right:\]](#連結成分個別オブジェクト化の-pi)
@@ -94,7 +94,7 @@ TODO: images.
 
 塗りつぶし以外にも，指定した範囲に対して任意のフィルタ効果をかけることができます．
 
-TODO: images.
+![色領域塗りつぶしのデモ](https://github.com/user-attachments/assets/43e4ac33-cc7b-4170-abd3-4fa6b3c57018)
 
 - 逆に指定範囲の外側のピクセルを塗りつぶすこともできます．
 
@@ -107,7 +107,7 @@ TODO: images.
 
 色で塗りつぶす領域に対して，任意のフィルタ効果をかけることもできます．
 
-TODO: images.
+![透明領域塗りつぶしのデモ](https://github.com/user-attachments/assets/c9e0b577-e299-4264-969c-e0a88b883949)
 
 - 逆にアンカー位置からつながっていない透明ピクセルのみに色を付けることもできます．
 
@@ -120,7 +120,7 @@ TODO: images.
 
 色で塗りつぶす領域に対して，任意のフィルタ効果をかけることもできます．
 
-TODO: images.
+![穴埋めフィルタ効果のデモ](https://github.com/user-attachments/assets/ee507378-d55b-457d-a6a7-cfc08ebf57f8)
 
 - 逆に上下左右端からつながっているピクセルのみの塗りつぶしもできます．
 - [透明領域塗りつぶし](#透明領域塗りつぶし)の特殊形です．
@@ -132,7 +132,7 @@ TODO: images.
 
 AviUtl2 標準の「クロマキー」「カラーキー」「ルミナンスキー」を画像全体に対してではなく，アンカーで指定した点から「つながっている」範囲だけ透過するように適用します．
 
-TODO: images.
+![領域クロマキーのデモ](https://github.com/user-attachments/assets/deba333a-1389-40b7-8d18-c791730be393)
 
 - 逆にアンカー位置からつながっている部分は透過しないようにもできます．
 
@@ -270,7 +270,7 @@ TODO: images.
 
 ピクセル同士が「つながっている」という判定で，角のみで接している場合でもつながっている扱いにします．
 
-TODO: image.
+![「角で隣接扱い」の比較](https://github.com/user-attachments/assets/5eaad387-af78-4028-ad10-a3e5ab743778)
 
 初期値は OFF.
 
@@ -278,7 +278,7 @@ TODO: image.
 
 画像の上下左右端のピクセルは，画像の外側の領域を経由して「つながっている」ような扱いにします．画像が端に見切れているとき，背景部分をまとめて指定したい場合などの使用を想定しています．
 
-TODO: image.
+![「左/右/上/下端を連結扱い」の比較](https://github.com/user-attachments/assets/0c938999-e348-42bf-9cb7-cf6868e7af99)
 
 初期値はスクリプトによって異なります．
 
@@ -306,6 +306,7 @@ TODO: image.
   1.  `color`: 「色」を `0xRRGGBB` の形式で表す number 型．
   1.  `intensity`: 「強さ」を 0.0 -- 1.0 の範囲で表す number 型．
   1.  `keep_luma`: 「輝度を保持する」を表す boolean 型．
+
 
 ### 連結成分個別オブジェクト化のパラメタ
 
@@ -442,7 +443,6 @@ TODO: image.
 各々の個別オブジェクトのサイズを，元々のオブジェクトからクリッピングせず，そのままのサイズで個別オブジェクトとします．本来クリッピングされるはずの領域は透明ピクセルで埋められます．
 
 初期値は OFF.
-
 
 ### 色領域塗りつぶしのパラメタ
 
