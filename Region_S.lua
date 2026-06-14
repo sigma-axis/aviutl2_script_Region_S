@@ -1,3 +1,4 @@
+--under development for v1.01 r1
 --[[
 MIT License
 Copyright (c) 2026 sigma-axis
@@ -290,10 +291,10 @@ local function crop_image(L, R, T, B, move_center)
 	end
 end
 
-local function PI_as_bool(pi_value, sel_value)
+local function PI_as_bool(pi_value, gui_value)
 	if type(pi_value) == "boolean" then return pi_value;
 	elseif type(pi_value) == "number" then return pi_value ~= 0;
-	else return sel_value end
+	else return gui_value end
 end
 
 local PI_choose_blend_mode do
@@ -307,11 +308,11 @@ local PI_choose_blend_mode do
 		"light", "dark", "brightness", "chroma", "shadow", "light_dark", "diff",
 		[100] = "alpha_add", [101] = "alpha_max", [102] = "alpha_sub", [103] = "alpha_add2", [104] = "rgba_add",
 	};
-	function PI_choose_blend_mode(pi_value, sel_value)
+	function PI_choose_blend_mode(pi_value, gui_value)
 		if type(pi_value) == "string" then
-			sel_value = blend_name2num[pi_value] or sel_value;
+			gui_value = blend_name2num[pi_value] or gui_value;
 		end
-		return blend_num2codename[sel_value] or "none";
+		return blend_num2codename[gui_value] or "none";
 	end
 end
 

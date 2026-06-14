@@ -1,3 +1,4 @@
+-- under development for v1.01, r1
 --[[
 MIT License
 Copyright (c) 2026 sigma-axis
@@ -26,12 +27,12 @@ https://mit-license.org/
 --information:連結成分塗りつぶし@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\加工
 --filter
---require:2004500
+--require:2005000
 --track@X:X,-4000,4000,0,0.1,,0.25
 --track@Y:Y,-4000,4000,0,0.1,,0.25
 --trackgroup@X,Y:Position
---check@invert:反転,false
---check@fixed_size:サイズ固定,true
+--checksection@invert:反転,false,false
+--checksection@fixed_size:サイズ固定,true,false
 --group:追加アンカー,false
 --track@num_points:個数,0,1024,0,1,,0.015625
 --value@points:位置,{}
@@ -39,7 +40,7 @@ https://mit-license.org/
 --select@mode_filter:適用する操作=0,単色化=0,後続フィルタ=1,スクリプト実行=2
 --color@color:色,0xff0000
 --track@intensity:強さ,0,100,100,0.1
---check@keep_luma:輝度を保持する,false
+--checksection@keep_luma:輝度を保持する,false,false
 --text@script:スクリプト,obj.effect("縁取りσ",\n  "方式", "総和",\n  "縁色", color,\n  "サイズ", 20,\n  "透明度", 100 * (1 - intensity))
 --group:透明度/合成設定,false
 --track@alpha_eff:透明度,0,100,0,0.01
@@ -49,7 +50,7 @@ https://mit-license.org/
 --group:境界設定,false
 --track@thresh:αしきい値,0,100,0,0.01
 --track@inflation:境界の膨張縮小,-500,500,0,0.01
---check@conn_corner:角で隣接扱い,false
+--checksection@conn_corner:角で隣接扱い,false,false
 --group:その他,false
 --value@PI:PI,{}
 --[[pixelshader@bin_by_alpha:
@@ -194,7 +195,7 @@ end
 @連結成分個別オブジェクト化
 --information:連結成分個別オブジェクト化@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\配置
---require:2004500
+--require:2005000
 --track@num_pieces:個数,1,128,4,1,,0.125
 --value@points:位置,{}
 --select@edit_mode:編集モード=2,出力表示=0,番号のみ表示=1,アンカー編集=2
@@ -204,9 +205,9 @@ end
 --select@delay_outoftime:時間範囲外=3,表示=0,早過ぎを非表示=1,遅過ぎを非表示=2,非表示=3
 --group:境界設定,false
 --track@thresh:αしきい値,0,100,0,0.01
---check@conn_corner:角で隣接扱い,false
+--checksection@conn_corner:角で隣接扱い,false,false
 --group:その他,false
---check@fixed_size:サイズ固定,false
+--checksection@fixed_size:サイズ固定,false,false
 --select@anchor_mode:アンカー=1,通常=0,小さい=1,非表示=2
 --value@PI:PI,{}
 local obj, math, tonumber = obj, math, tonumber;
@@ -511,17 +512,17 @@ end
 --information:色領域塗りつぶし@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\加工
 --filter
---require:2004500
+--require:2005000
 --track@X:X,-4000,4000,0,0.1,,0.25
 --track@Y:Y,-4000,4000,0,0.1,,0.25
 --trackgroup@X,Y:Position
---check@invert:反転,false
---check@fixed_size:サイズ固定,true
+--checksection@invert:反転,false,false
+--checksection@fixed_size:サイズ固定,true,false
 --group:色/フィルタ設定,false
 --select@mode_filter:適用する操作=0,単色化=0,後続フィルタ=1,スクリプト実行=2
 --color@color:色,0xff0000
 --track@intensity:強さ,0,100,100,0.1
---check@keep_luma:輝度を保持する,false
+--checksection@keep_luma:輝度を保持する,false,false
 --text@script:スクリプト,obj.effect("縁取りσ",\n  "方式", "総和",\n  "縁色", color,\n  "サイズ", 20,\n  "透明度", 100 * (1 - intensity))
 --group:透明度/合成設定,false
 --track@alpha_eff:透明度,0,100,0,0.01
@@ -534,12 +535,12 @@ end
 --track@range_G:G範囲補正,0,800,100,0.01,,0.25
 --track@range_B:B範囲補正,0,800,100,0.01,,0.25
 --track@inflation:境界の膨張縮小,-500,500,0,0.01
---check@conn_corner:角で隣接扱い,false
---check@union_left:左端を連結扱い,false
---check@union_right:右端を連結扱い,false
---check@union_top:上端を連結扱い,false
---check@union_bottom:下端を連結扱い,false
---check@conn_empty:透明ピクセルを連結扱い,false
+--checksection@conn_corner:角で隣接扱い,false,false
+--checksection@union_left:左端を連結扱い,false,false
+--checksection@union_right:右端を連結扱い,false,false
+--checksection@union_top:上端を連結扱い,false,false
+--checksection@union_bottom:下端を連結扱い,false,false
+--checksection@conn_empty:透明ピクセルを連結扱い,false,false
 --group:その他,false
 --value@PI:PI,{}
 --[[pixelshader@bin_by_color:
@@ -682,13 +683,13 @@ end
 --information:透明領域塗りつぶし@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\加工
 --filter
---require:2004500
+--require:2005000
 --track@X:X,-4000,4000,0,0.1,,0.25
 --track@Y:Y,-4000,4000,0,0.1,,0.25
 --trackgroup@X,Y:Position
 --color@color:色,0xff0000
 --track@alpha:透明度,0,100,0,0.01
---check@invert:反転,false
+--checksection@invert:反転,false,false
 --group:追加アンカー,false
 --track@num_points:個数,0,1024,0,1,,0.015625
 --value@points:位置,{}
@@ -702,11 +703,11 @@ end
 --group:境界設定,false
 --track@thresh:αしきい値,0,100,100,0.01
 --track@inflation:境界の膨張縮小,-500,500,0,0.01
---check@conn_corner:角で隣接扱い,false
---check@union_left:左端を連結扱い,false
---check@union_right:右端を連結扱い,false
---check@union_top:上端を連結扱い,false
---check@union_bottom:下端を連結扱い,false
+--checksection@conn_corner:角で隣接扱い,false,false
+--checksection@union_left:左端を連結扱い,false,false
+--checksection@union_right:右端を連結扱い,false,false
+--checksection@union_top:上端を連結扱い,false,false
+--checksection@union_bottom:下端を連結扱い,false,false
 --group:その他,false
 --value@PI:PI,{}
 local obj, math, tonumber = obj, math, tonumber;
@@ -811,10 +812,10 @@ end
 --information:穴埋め@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\加工
 --filter
---require:2004500
+--require:2005000
 --color@color:色,0xff0000
 --track@alpha:透明度,0,100,0,0.01
---check@invert:反転,false
+--checksection@invert:反転,false,false
 --group:追加効果,false
 --select@extra_filter:追加のフィルタ効果=0,なし=0,後続フィルタ=1,スクリプト実行=2
 --text@extra_script:スクリプト,
@@ -825,11 +826,11 @@ end
 --group:境界設定,false
 --track@thresh:αしきい値,0,100,100,0.01
 --track@inflation:境界の膨張縮小,-500,500,0,0.01
---check@conn_corner:角で隣接扱い,false
---check@union_left:左端を連結扱い,true
---check@union_right:右端を連結扱い,true
---check@union_top:上端を連結扱い,true
---check@union_bottom:下端を連結扱い,true
+--checksection@conn_corner:角で隣接扱い,false,false
+--checksection@union_left:左端を連結扱い,true,false
+--checksection@union_right:右端を連結扱い,true,false
+--checksection@union_top:上端を連結扱い,true,false
+--checksection@union_bottom:下端を連結扱い,true,false
 --group:その他,false
 --value@PI:PI,{}
 local obj, math, tonumber = obj, math, tonumber;
@@ -918,11 +919,11 @@ end
 --information:領域クロマキー@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\抽出
 --filter
---require:2004500
+--require:2005000
 --track@X:X,-4000,4000,0,0.1,,0.25
 --track@Y:Y,-4000,4000,0,0.1,,0.25
 --trackgroup@X,Y:Position
---check@invert:反転,false
+--checksection@invert:反転,false,false
 --group:追加アンカー,false
 --track@num_points:個数,0,1024,0,1,,0.015625
 --value@points:位置,{}
@@ -931,16 +932,16 @@ end
 --track@range_sat:彩度範囲,0,256,96,1
 --track@blur:境界補正,0,8,1,1
 --color@color:基準色,nil
---check@adjust_chroma:色彩補正,false
---check@adjust_alpha:透過補正,false
+--checksection@adjust_chroma:色彩補正,false,false
+--checksection@adjust_alpha:透過補正,false,false
 --group:境界設定,false
 --track@thresh:αしきい値,0,100,90,0.01
 --track@inflation:境界の膨張縮小,-500,500,0,0.01
---check@conn_corner:角で隣接扱い,false
---check@union_left:左端を連結扱い,false
---check@union_right:右端を連結扱い,false
---check@union_top:上端を連結扱い,false
---check@union_bottom:下端を連結扱い,false
+--checksection@conn_corner:角で隣接扱い,false,false
+--checksection@union_left:左端を連結扱い,false,false
+--checksection@union_right:右端を連結扱い,false,false
+--checksection@union_top:上端を連結扱い,false,false
+--checksection@union_bottom:下端を連結扱い,false,false
 --group:その他,false
 --value@PI:PI,{}
 local obj, math, tonumber = obj, math, tonumber;
@@ -1024,11 +1025,11 @@ region_s.anchored_transparent_key(thresh, inflation, conn_corner,
 --information:領域カラーキー@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\抽出
 --filter
---require:2004500
+--require:2005000
 --track@X:X,-4000,4000,0,0.1,,0.25
 --track@Y:Y,-4000,4000,0,0.1,,0.25
 --trackgroup@X,Y:Position
---check@invert:反転,false
+--checksection@invert:反転,false,false
 --group:追加アンカー,false
 --track@num_points:個数,0,1024,0,1,,0.015625
 --value@points:位置,{}
@@ -1040,11 +1041,11 @@ region_s.anchored_transparent_key(thresh, inflation, conn_corner,
 --group:境界設定,false
 --track@thresh:αしきい値,0,100,90,0.01
 --track@inflation:境界の膨張縮小,-500,500,0,0.01
---check@conn_corner:角で隣接扱い,false
---check@union_left:左端を連結扱い,false
---check@union_right:右端を連結扱い,false
---check@union_top:上端を連結扱い,false
---check@union_bottom:下端を連結扱い,false
+--checksection@conn_corner:角で隣接扱い,false,false
+--checksection@union_left:左端を連結扱い,false,false
+--checksection@union_right:右端を連結扱い,false,false
+--checksection@union_top:上端を連結扱い,false,false
+--checksection@union_bottom:下端を連結扱い,false,false
 --group:その他,false
 --value@PI:PI,{}
 local obj, math, tonumber = obj, math, tonumber;
@@ -1122,11 +1123,11 @@ region_s.anchored_transparent_key(thresh, inflation, conn_corner,
 --information:領域ルミナンスキー@Region_S v1.00 (for beta47) by σ軸
 --label:Region_S\抽出
 --filter
---require:2004500
+--require:2005000
 --track@X:X,-4000,4000,0,0.1,,0.25
 --track@Y:Y,-4000,4000,0,0.1,,0.25
 --trackgroup@X,Y:Position
---check@invert:反転,false
+--checksection@invert:反転,false,false
 --group:追加アンカー,false
 --track@num_points:個数,0,1024,0,1,,0.015625
 --value@points:位置,{}
@@ -1137,11 +1138,11 @@ region_s.anchored_transparent_key(thresh, inflation, conn_corner,
 --group:境界設定,false
 --track@thresh:αしきい値,0,100,90,0.01
 --track@inflation:境界の膨張縮小,-500,500,0,0.01
---check@conn_corner:角で隣接扱い,false
---check@union_left:左端を連結扱い,false
---check@union_right:右端を連結扱い,false
---check@union_top:上端を連結扱い,false
---check@union_bottom:下端を連結扱い,false
+--checksection@conn_corner:角で隣接扱い,false,false
+--checksection@union_left:左端を連結扱い,false,false
+--checksection@union_right:右端を連結扱い,false,false
+--checksection@union_top:上端を連結扱い,false,false
+--checksection@union_bottom:下端を連結扱い,false,false
 --group:その他,false
 --value@PI:PI,{}
 local obj, math, tonumber = obj, math, tonumber;
