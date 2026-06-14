@@ -25,7 +25,7 @@ https://mit-license.org/
 ]]
 
 --
--- v1.00 (for beta47)
+-- v1.01 (for beta50)
 --
 
 local obj, print, type, tonumber, unpack, loadstring, pcall, bit, ffi = obj, print, type, tonumber, unpack, loadstring, pcall, require("bit"), require("ffi");

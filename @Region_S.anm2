@@ -1,4 +1,3 @@
--- under development for v1.01, r1
 --[[
 MIT License
 Copyright (c) 2026 sigma-axis
@@ -24,7 +23,7 @@ SOFTWARE.
 https://mit-license.org/
 ]]
 @連結成分塗りつぶし
---information:連結成分塗りつぶし@Region_S v1.00 (for beta47) by σ軸
+--information:連結成分塗りつぶし@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\加工
 --filter
 --require:2005000
@@ -193,7 +192,7 @@ if mode_filter == 1 then
 end
 
 @連結成分個別オブジェクト化
---information:連結成分個別オブジェクト化@Region_S v1.00 (for beta47) by σ軸
+--information:連結成分個別オブジェクト化@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\配置
 --require:2005000
 --track@num_pieces:個数,1,128,4,1,,0.125
@@ -509,7 +508,7 @@ else
 end
 
 @色領域塗りつぶし
---information:色領域塗りつぶし@Region_S v1.00 (for beta47) by σ軸
+--information:色領域塗りつぶし@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\加工
 --filter
 --require:2005000
@@ -680,7 +679,7 @@ if mode_filter == 1 then
 end
 
 @透明領域塗りつぶし
---information:透明領域塗りつぶし@Region_S v1.00 (for beta47) by σ軸
+--information:透明領域塗りつぶし@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\加工
 --filter
 --require:2005000
@@ -809,7 +808,7 @@ if extra_filter == 1 then
 end
 
 @穴埋め
---information:穴埋め@Region_S v1.00 (for beta47) by σ軸
+--information:穴埋め@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\加工
 --filter
 --require:2005000
@@ -916,7 +915,7 @@ if extra_filter == 1 then
 end
 
 @領域クロマキー
---information:領域クロマキー@Region_S v1.00 (for beta47) by σ軸
+--information:領域クロマキー@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\抽出
 --filter
 --require:2005000
@@ -1022,7 +1021,7 @@ region_s.anchored_transparent_key(thresh, inflation, conn_corner,
 	end);
 
 @領域カラーキー
---information:領域カラーキー@Region_S v1.00 (for beta47) by σ軸
+--information:領域カラーキー@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\抽出
 --filter
 --require:2005000
@@ -1120,7 +1119,7 @@ region_s.anchored_transparent_key(thresh, inflation, conn_corner,
 	end);
 
 @領域ルミナンスキー
---information:領域ルミナンスキー@Region_S v1.00 (for beta47) by σ軸
+--information:領域ルミナンスキー@Region_S v1.01 (for beta50) by σ軸
 --label:Region_S\抽出
 --filter
 --require:2005000
